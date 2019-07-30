@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.yidiandian.dao.YhPlatformUpdpriceDao">
+
+    <insert id="insertUpdprice" parameterType="com.yidiandian.entity.YhPlatformUpdprice">
+       insert into yh_platform_updprice(
+        PH_KEY,SHEETID,REFSHEETID,REFSHEETTYPE,SHEETCANCELFLAG,
+        SHOPID,CHANGEMODE,STARTDATE,ENDDATE,NMPRICEFLAG,
+        CHECKDATE,EXECUTETIME,NOTE,ORDERFLAG,STARTTIME,
+        ENDTIME,DMSHEETID,ISEMPTY,AREAID,UPDTYPE,
+        PLANID,PROMNO,POPLEVEL,RULENO,FDMODE,
+        SDFLAG,CUSTTYPE,PRI,SYNCHRO)
+        values(
+        #{phKey},#{sheetId},#{refSheetId},#{refSheetType},#{sheetCancelFlag},
+        #{shopId},#{changeMode},#{startDate},#{endDate},#{nmPriceFlag},
+        #{checkDate},#{executeTime},#{note},#{orderFlag},#{startTime},
+        #{endTime}, #{dmSheetId},#{isEmpty},#{areaId}, #{updType},
+        #{planId},#{promNo},#{popLevel},#{ruleNo},#{fdMode},
+        #{sdFlag},#{custType},#{pri},#{synchro}
+            )
+    </insert>
+
+</mapper>
+

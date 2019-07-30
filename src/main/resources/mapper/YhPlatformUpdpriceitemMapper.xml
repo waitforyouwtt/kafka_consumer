@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.yidiandian.dao.YhPlatformUpdpriceitemDao">
+    <insert id="insertUpdpriceitem">
+       insert into yh_platform_updpriceitem
+       (
+       PH_KEY,SHEETID,SEQID,GOODSID,VENDERID
+       ,ALLOCATERATE,OLDCOST,NEWCOST,OLDPRICE,NEWPRICE
+       ,LIMITFLAG,LIMITQTY,PROMFUND,DMFLAG,ISPROMFLAG
+       ,PRCMODE,DISRATE,DISAMT,POPSETMODEL,CATCODE
+       ,PPCODE,SUPID,CANCELFLAG,POPJOINMODEL
+       )
+        values
+        <foreach collection="list" item="item" separator=",">
+        (
+            #{item.phKey}, #{item.sheetId}, #{item.seqId},#{item.goodsId}, #{item.venDerId},
+            #{item.alloCateRate},#{item.oldCost}, #{item.newCost},#{item.oldPrice}, #{item.newPrice},
+            #{item.limitFlag}, #{item.limitQty},#{item.promFund}, #{item.dmFlag},#{item.isPromFlag},
+            #{item.prcMode}, #{item.disRate}, #{item.disAmt},#{item.popSetModel}, #{item.catCode},
+            #{item.ppCode},#{item.supId}, #{item.cancelFlag}, #{item.popJoinModel}
+        )
+        </foreach>
+    </insert>
+
+</mapper>
+
